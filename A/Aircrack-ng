@@ -1,0 +1,22 @@
+# Aircrack-ng
+
+**Category:** Red Team – Wireless Attacks  
+**Description:**  
+Aircrack-ng is a complete suite of tools to assess Wi-Fi network security. It focuses on monitoring, attacking, testing, and cracking WEP and WPA/WPA2 keys.
+
+## Key Commands
+- **Monitor mode:**
+```bash
+airmon-ng start wlan0
+
+    Capture packets:
+
+airodump-ng wlan0mon
+
+    Deauth attack:
+
+aireplay-ng -0 5 -a <AP_MAC> -c <CLIENT_MAC> wlan0mon
+
+    Crack captured handshake:
+
+aircrack-ng capture.cap -w /path/to/wordlist.txt
