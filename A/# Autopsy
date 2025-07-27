@@ -1,0 +1,19 @@
+
+# Autopsy
+
+**Category:** Blue Team – Forensics  
+**Description:**  
+Autopsy is a digital forensics platform and graphical interface to The Sleuth Kit. It’s used to investigate disk images and recover deleted files.
+
+## Key Features
+- Timeline analysis
+- Keyword searching
+- File system browsing
+
+## Usage
+- **Launch Autopsy (web interface):**
+```bash
+autopsy
+
+    Open a case:
+    Navigate in your browser to the Autopsy interface (default: http://localhost:9999), create a new case, and add your evidence.
