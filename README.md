@@ -1,4 +1,13 @@
-# A-Z Command Line Index
+# Student Tools A–Z
+
+This is your reference vault — a curated A–Z of practical tools, commands, definitions, and walkthroughs for coding and cybersecurity.
+
+It's built to grow with you:  
+Whether you're learning how to use WSL, running tools like Burp Suite, or trying to remember what a specific terminal flag does — this is where you find it.
+
+Each letter links to a folder of entries starting with that letter.
+
+Pull, explore, or contribute. It's yours to build on.
 
 ## 📖 Index
 
